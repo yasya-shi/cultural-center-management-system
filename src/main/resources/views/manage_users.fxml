@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" spacing="25" style="-fx-padding: 30; -fx-background-color: #fef5f5;"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.culturalcenter.client.controllers.ManageUsersController">
+
+    <Text text="Управление пользователями" style="-fx-font-size: 36; -fx-font-weight: bold; -fx-fill: #8b3a3a; -fx-font-family: 'Georgia';"/>
+
+    <!-- Таблица -->
+    <TableView fx:id="usersTable" prefHeight="380" VBox.vgrow="NEVER">
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+        <columns>
+            <TableColumn text="ID" fx:id="colId" prefWidth="50"/>
+            <TableColumn text="Логин" fx:id="colLogin" prefWidth="100"/>
+            <TableColumn text="ФИО" fx:id="colFullName" prefWidth="180"/>
+            <TableColumn text="Email" fx:id="colEmail" prefWidth="160"/>
+            <TableColumn text="Телефон" fx:id="colPhone" prefWidth="120"/>
+            <TableColumn text="Роль" fx:id="colRole" prefWidth="90"/>
+            <TableColumn text="Статус" fx:id="colStatus" prefWidth="90"/>
+        </columns>
+    </TableView>
+
+    <!-- Кнопки в 2 ряда, ОДИНАКОВОЙ ШИРИНЫ 240px -->
+    <VBox spacing="20" alignment="CENTER">
+        <!-- 1 ряд -->
+        <HBox spacing="30" alignment="CENTER">
+            <Button text="ДОБАВИТЬ" onAction="#onAdd" prefWidth="240" prefHeight="70"
+                    style="-fx-background-color: #a05252; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+            <Button text="РЕДАКТИРОВАТЬ" onAction="#onEdit" prefWidth="240" prefHeight="70"
+                    style="-fx-background-color: #a05252; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+            <Button text="УДАЛИТЬ" onAction="#onDelete" prefWidth="240" prefHeight="70"
+                    style="-fx-background-color: #c97a7a; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+        </HBox>
+        <!-- 2 ряд -->
+        <HBox spacing="30" alignment="CENTER">
+            <Button text="ЗАБЛОКИРОВАТЬ" onAction="#onBlock" prefWidth="240" prefHeight="70"
+                    style="-fx-background-color: #d4a0a0; -fx-text-fill: #5a2a2a; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+            <Button text="РАЗБЛОКИРОВАТЬ" onAction="#onUnblock" prefWidth="240" prefHeight="70"
+                    style="-fx-background-color: #d4a0a0; -fx-text-fill: #5a2a2a; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+            <Button text="НАЗНАЧИТЬ ДИРЕКТОРОМ" onAction="#onAssignDirector" prefWidth="240" prefHeight="70"
+                    style="-fx-background-color: #8b3a3a; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+        </HBox>
+    </VBox>
+
+    <Button text="НАЗАД" onAction="#onBack" prefWidth="300" prefHeight="60"
+            style="-fx-background-color: #d4a0a0; -fx-text-fill: #5a2a2a; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 30; -fx-cursor: hand;"/>
+
+</VBox>

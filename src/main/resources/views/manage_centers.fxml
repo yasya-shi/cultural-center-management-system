@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" spacing="25" style="-fx-padding: 30; -fx-background-color: #fef5f5;"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.culturalcenter.client.controllers.ManageCentersController">
+
+    <Text text="Управление культурными центрами" style="-fx-font-size: 36; -fx-font-weight: bold; -fx-fill: #8b3a3a; -fx-font-family: 'Georgia';"/>
+
+    <!-- Таблица с бордовой стилизацией -->
+    <TableView fx:id="centersTable" prefHeight="380" VBox.vgrow="NEVER"
+               style="-fx-border-color: #8b3a3a; -fx-border-width: 2; -fx-border-radius: 10; -fx-selection-bar: #c97a7a; -fx-selection-bar-non-focused: #d4a0a0;">
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+        <columns>
+            <TableColumn text="ID" fx:id="colId" prefWidth="50"/>
+            <TableColumn text="Название" fx:id="colName" prefWidth="200"/>
+            <TableColumn text="Адрес" fx:id="colAddress" prefWidth="250"/>
+            <TableColumn text="Телефон" fx:id="colPhone" prefWidth="130"/>
+            <TableColumn text="Email" fx:id="colEmail" prefWidth="160"/>
+            <TableColumn text="Директор" fx:id="colDirector" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <!-- Кнопки -->
+    <VBox spacing="20" alignment="CENTER">
+        <HBox spacing="30" alignment="CENTER">
+            <Button text="ДОБАВИТЬ" onAction="#onAdd" prefWidth="240" prefHeight="70"
+                    style="-fx-background-color: #a05252; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+            <Button text="РЕДАКТИРОВАТЬ" onAction="#onEdit" prefWidth="240" prefHeight="70"
+                    style="-fx-background-color: #a05252; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+            <Button text="УДАЛИТЬ" onAction="#onDelete" prefWidth="240" prefHeight="70"
+                    style="-fx-background-color: #c97a7a; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+        </HBox>
+    </VBox>
+
+    <Button text="НАЗАД" onAction="#onBack" prefWidth="300" prefHeight="60"
+            style="-fx-background-color: #d4a0a0; -fx-text-fill: #5a2a2a; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 30; -fx-cursor: hand;"/>
+
+</VBox>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="25" style="-fx-padding: 40; -fx-background-color: #fef5f5;"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.culturalcenter.client.controllers.AdminController">
+
+    <VBox alignment="CENTER" spacing="10" style="-fx-border-color: #c97a7a; -fx-border-width: 2; -fx-border-radius: 20; -fx-padding: 20; -fx-background-radius: 20;">
+        <Text text="👑 Личный кабинет" style="-fx-font-size: 36; -fx-font-weight: bold; -fx-fill: #8b3a3a; -fx-font-family: 'Georgia';"/>
+        <Text text="АДМИНИСТРАТОРА" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-fill: #c97a7a; -fx-font-family: 'Georgia';"/>
+
+        <!-- 👇 ДОБАВЛЕНО — ФИО пользователя -->
+        <Label fx:id="userLabel" style="-fx-font-size: 18; -fx-text-fill: #6b3a3a; -fx-font-family: 'Georgia'; -fx-font-style: italic;" />
+
+        <Text text="Добро пожаловать!" style="-fx-font-size: 18; -fx-fill: #b87a7a; -fx-font-family: 'Georgia';"/>
+    </VBox>
+
+    <HBox alignment="CENTER" spacing="30">
+        <Button fx:id="usersButton" text="👥 ПОЛЬЗОВАТЕЛИ" onAction="#onManageUsers" prefWidth="220" prefHeight="80"
+                style="-fx-background-color: #a05252; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+
+        <Button fx:id="centersButton" text="🏢 КУЛЬТУРНЫЕ ЦЕНТРЫ" onAction="#onManageCenters" prefWidth="220" prefHeight="80"
+                style="-fx-background-color: #a05252; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand; -fx-wrap-text: true; -fx-text-alignment: center;"
+                textAlignment="CENTER"/>
+
+        <Button fx:id="profileButton" text="👤 ПРОФИЛЬ" onAction="#onEditProfile" prefWidth="220" prefHeight="80"
+                style="-fx-background-color: #a05252; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+    </HBox>
+
+    <Button fx:id="logoutButton" text="🚪 ВЫЙТИ" onAction="#onLogout" prefWidth="250" prefHeight="60"
+            style="-fx-background-color: #d4a0a0; -fx-text-fill: #5a2a2a; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 25; -fx-cursor: hand;"/>
+
+</VBox>

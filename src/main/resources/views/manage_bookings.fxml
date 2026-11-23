@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" spacing="25" style="-fx-padding: 30; -fx-background-color: #fef5f5;"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.culturalcenter.client.controllers.ManageBookingsController">
+
+    <Text text="Заявки на бронирование" style="-fx-font-size: 36; -fx-font-weight: bold; -fx-fill: #8b3a3a; -fx-font-family: 'Georgia';"/>
+
+    <!-- Фильтр по статусу -->
+    <HBox spacing="15" alignment="CENTER">
+        <Label text="Статус:" textFill="#8b3a3a" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+        <ComboBox fx:id="statusFilter" prefWidth="180" prefHeight="40"
+                  style="-fx-font-size: 14; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #d4a0a0;"/>
+        <Button text="ПРИМЕНИТЬ" onAction="#onApplyFilter" prefWidth="120" prefHeight="40"
+                style="-fx-background-color: #a05252; -fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-radius: 20; -fx-cursor: hand;"/>
+        <Button text="ОБНОВИТЬ" onAction="#onRefresh" prefWidth="120" prefHeight="40"
+                style="-fx-background-color: #c97a7a; -fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-radius: 20; -fx-cursor: hand;"/>
+    </HBox>
+
+    <!-- Таблица заявок -->
+    <TableView fx:id="bookingsTable" prefHeight="400" VBox.vgrow="NEVER"
+               style="-fx-border-color: #8b3a3a; -fx-border-width: 2; -fx-border-radius: 10; -fx-selection-bar: #c97a7a; -fx-selection-bar-non-focused: #d4a0a0;">
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+        <columns>
+            <TableColumn text="ID" fx:id="colId" prefWidth="50"/>
+            <TableColumn text="Зал" fx:id="colRoom" prefWidth="150"/>
+            <TableColumn text="Организатор" fx:id="colOrganizer" prefWidth="180"/>
+            <TableColumn text="Дата" fx:id="colDate" prefWidth="100"/>
+            <TableColumn text="Время" fx:id="colTime" prefWidth="120"/>
+            <TableColumn text="Цель" fx:id="colPurpose" prefWidth="200"/>
+            <TableColumn text="Статус" fx:id="colStatus" prefWidth="120"/>
+        </columns>
+    </TableView>
+
+    <!-- Кнопки действий -->
+    <HBox spacing="30" alignment="CENTER">
+        <Button text="ПОДТВЕРДИТЬ" onAction="#onApprove" prefWidth="200" prefHeight="70"
+                style="-fx-background-color: #a05252; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+        <Button text="ОТКЛОНИТЬ" onAction="#onReject" prefWidth="200" prefHeight="70"
+                style="-fx-background-color: #c97a7a; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+    </HBox>
+
+    <Button text="НАЗАД" onAction="#onBack" prefWidth="300" prefHeight="60"
+            style="-fx-background-color: #d4a0a0; -fx-text-fill: #5a2a2a; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 30; -fx-cursor: hand;"/>
+
+</VBox>

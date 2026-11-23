@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" spacing="25" style="-fx-padding: 30; -fx-background-color: #fef5f5;"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.culturalcenter.client.controllers.ReportsController">
+
+    <Text text="Аналитические отчёты" style="-fx-font-size: 36; -fx-font-weight: bold; -fx-fill: #8b3a3a; -fx-font-family: 'Georgia';"/>
+
+    <!-- Панель выбора параметров -->
+    <GridPane hgap="20" vgap="15" alignment="CENTER" style="-fx-padding: 20; -fx-border-color: #d4a0a0; -fx-border-width: 1; -fx-border-radius: 15; -fx-background-radius: 15;">
+        <Label text="Период:" textFill="#8b3a3a" style="-fx-font-size: 18; -fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="periodCombo" prefWidth="200" prefHeight="40" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                  style="-fx-font-size: 16; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #d4a0a0;"/>
+
+        <Label text="Тип отчёта:" textFill="#8b3a3a" style="-fx-font-size: 18; -fx-font-weight: bold;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="reportTypeCombo" prefWidth="200" prefHeight="40" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                  style="-fx-font-size: 16; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #d4a0a0;"/>
+
+        <Button text="СФОРМИРОВАТЬ" onAction="#onGenerateReport" prefWidth="200" prefHeight="50" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2"
+                style="-fx-background-color: #a05252; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-background-radius: 25; -fx-cursor: hand;"/>
+    </GridPane>
+
+    <!-- Таблица результатов -->
+    <TableView fx:id="reportTable" prefHeight="350" VBox.vgrow="NEVER"
+               style="-fx-border-color: #8b3a3a; -fx-border-width: 2; -fx-border-radius: 10; -fx-selection-bar: #c97a7a; -fx-selection-bar-non-focused: #d4a0a0;">
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+        <columns>
+            <TableColumn text="Название зала" fx:id="colRoomName" prefWidth="200"/>
+            <TableColumn text="Часы" fx:id="colHours" prefWidth="100"/>
+            <TableColumn text="Кол-во заявок" fx:id="colBookingCount" prefWidth="120"/>
+            <TableColumn text="Ср. оценка" fx:id="colRating" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <!-- Кнопки -->
+    <HBox spacing="30" alignment="CENTER">
+        <Button text="СОХРАНИТЬ В ФАЙЛ" onAction="#onSaveToFile" prefWidth="220" prefHeight="60"
+                style="-fx-background-color: #c97a7a; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+        <Button text="НАЗАД" onAction="#onBack" prefWidth="220" prefHeight="60"
+                style="-fx-background-color: #d4a0a0; -fx-text-fill: #5a2a2a; -fx-font-size: 16; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"/>
+    </HBox>
+
+</VBox>

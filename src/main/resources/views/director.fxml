@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="25" style="-fx-padding: 40; -fx-background-color: #fef5f5;"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.culturalcenter.client.controllers.DirectorController">
+
+    <VBox alignment="CENTER" spacing="10" style="-fx-border-color: #c97a7a; -fx-border-width: 2; -fx-border-radius: 20; -fx-padding: 20; -fx-background-radius: 20;">
+        <Text text="🏢 Личный кабинет" style="-fx-font-size: 36; -fx-font-weight: bold; -fx-fill: #8b3a3a; -fx-font-family: 'Georgia';"/>
+        <Text text="ДИРЕКТОРА" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-fill: #c97a7a; -fx-font-family: 'Georgia';"/>
+
+        <!-- 👇 ДОБАВЛЕНО — ФИО пользователя -->
+        <Label fx:id="userLabel" style="-fx-font-size: 18; -fx-text-fill: #6b3a3a; -fx-font-family: 'Georgia'; -fx-font-style: italic;" />
+
+        <Text text="Добро пожаловать!" style="-fx-font-size: 18; -fx-fill: #b87a7a; -fx-font-family: 'Georgia';"/>
+    </VBox>
+
+    <GridPane hgap="30" vgap="20" alignment="CENTER">
+
+        <Button fx:id="bookingsButton" text="📋 ЗАЯВКИ" onAction="#onBookings" prefWidth="300" prefHeight="80"
+                style="-fx-background-color: #c97a7a; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand; -fx-text-alignment: center; -fx-wrap-text: true;"
+                GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+
+        <Button fx:id="centersButton" text="🏢 МОЙ ЦЕНТР" onAction="#onCenters" prefWidth="280" prefHeight="80"
+                style="-fx-background-color: #c97a7a; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"
+                GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Button fx:id="reportsButton" text="📊 ОТЧЁТЫ" onAction="#onReports" prefWidth="280" prefHeight="80"
+                style="-fx-background-color: #a05252; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"
+                GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+
+        <Button fx:id="profileButton" text="👤 ПРОФИЛЬ" onAction="#onEditProfile" prefWidth="280" prefHeight="80"
+                style="-fx-background-color: #a05252; -fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 35; -fx-cursor: hand;"
+                GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    </GridPane>
+
+    <Button fx:id="logoutButton" text="🚪 ВЫЙТИ" onAction="#onLogout" prefWidth="250" prefHeight="60"
+            style="-fx-background-color: #d4a0a0; -fx-text-fill: #5a2a2a; -fx-font-size: 18; -fx-font-weight: bold; -fx-background-radius: 25; -fx-cursor: hand;"/>
+
+</VBox>
